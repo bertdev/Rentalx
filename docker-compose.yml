@@ -1,6 +1,18 @@
 version: '3.7'
 
 services:
+  database:
+    image: postgres
+    container_name: database_rentalx
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=hh1234
+      - POSTGRES_DB=rentalx
+    volumes:
+      - pgdata:/data/postgres
   app:
     build: .
     container_name: rentalxAPI
@@ -8,3 +20,11 @@ services:
       - 3000:3000
     volumes:
       - .:/usr/app
+    links:
+      - database
+    depends_on:
+      - database
+
+volumes:
+  pgdata:
+    driver: local
