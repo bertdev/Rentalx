@@ -1,6 +1,7 @@
 import { hash } from "bcrypt";
 import { inject, injectable } from "tsyringe";
 
+import { AppError } from "../../../../errors/AppError";
 import { ICreateUsersDTO } from "../../dtos/ICreateUserDTO";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 
@@ -19,7 +20,7 @@ class CreateUserUseCase {
   }: ICreateUsersDTO): Promise<void> {
     const userAlreadyExists = await this.usersRepository.findByEmail(email);
     if (userAlreadyExists) {
-      throw new Error("This email is already in use");
+      throw new AppError("This email is already in use");
     }
 
     const passwordHash = await hash(password, 8);
