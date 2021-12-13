@@ -15,21 +15,9 @@
       "@shared/*": [
         "shared/*"
       ],
-      "@errors/*": [
-        "errors/*"
-      ],
       "@utils/*": [
         "utils/*"
       ],
-      "@routes/*": [
-        "routes/*"
-      ],
-      "@middlewares/*": [
-        "middlewares/*"
-      ],
-      "@database/*": [
-        "database/*"
-      ]
     },
     "resolveJsonModule": true,
     "esModuleInterop": true,
