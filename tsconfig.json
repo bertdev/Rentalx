@@ -17,7 +17,7 @@
       ],
       "@utils/*": [
         "utils/*"
-      ],
+      ]
     },
     "resolveJsonModule": true,
     "esModuleInterop": true,
