@@ -4,7 +4,7 @@ import { container } from "tsyringe";
 import { UploadCarImagesUseCase } from "./UploadCarImagesUseCase";
 
 interface IFiles {
-  fileName: string;
+  filename: string;
 }
 
 class UploadCarImagesController {

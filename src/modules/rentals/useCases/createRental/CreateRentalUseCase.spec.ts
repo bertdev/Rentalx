@@ -32,7 +32,6 @@ describe("Create rental", () => {
     });
 
     expect(rental).toHaveProperty("id");
-    expect(rental).toHaveProperty("start_date");
   });
 
   it("Should not be able to create a new rental if there's another rental open to the same user", () => {
